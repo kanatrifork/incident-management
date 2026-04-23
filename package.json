@@ -2,7 +2,9 @@
   "name": "incident-management",
   "version": "1.0.0",
   "dependencies": {
-    "@sap/cds": "^9"
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-test": "^1.0.0",
@@ -38,7 +40,14 @@
         "auth": {
           "kind": "dummy"
         }
-      }
+      },
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "destinations": true,
+      "html5-repo": true,
+      "workzone": true
     }
   },
   "private": true,
